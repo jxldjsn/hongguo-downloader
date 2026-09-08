@@ -1,0 +1,474 @@
+{
+  "profilePath": "C:\\Users\\c1732\\AppData\\Local\\Temp\\douyin-login-live-test-487712",
+  "results": [
+    {
+      "platform": "xiaohongshu",
+      "requestedUrl": "https://www.xiaohongshu.com/explore",
+      "finalUrl": "https://www.xiaohongshu.com/explore",
+      "durationMs": 9837,
+      "loadResult": {
+        "status": "resolved"
+      },
+      "dom": {
+        "url": "https://www.xiaohongshu.com/explore",
+        "title": "小红书 - 你的生活兴趣社区",
+        "readyState": "complete",
+        "htmlLength": 1042529,
+        "bodyTextLength": 1720,
+        "bodyHtmlLength": 466855,
+        "bodyChildCount": 12,
+        "rootHtmlLength": 208500,
+        "bodyDisplay": "block",
+        "bodyVisibility": "visible",
+        "bodyOpacity": "1",
+        "bodyBackground": "rgb(255, 255, 255)",
+        "bodyWidth": 984,
+        "bodyHeight": 4042
+      },
+      "evaluateError": null,
+      "rendererGone": null,
+      "screenshot": {
+        "width": 984,
+        "height": 641,
+        "sampled": 5330,
+        "whiteRatio": 0.5276,
+        "transparentRatio": 0
+      },
+      "screenshotError": null,
+      "screenshotPath": "C:\\Users\\c1732\\Desktop\\技术相关源码\\项目等等\\抖音下载1\\抖音下载器win版\\_automation_test\\login-window-live-results\\xiaohongshu.png",
+      "consoleErrors": [
+        {
+          "level": 2,
+          "message": "Invalid asm.js: Function use doesn't match definition",
+          "line": 1,
+          "sourceId": "https://fe-static.xhscdn.com/formula-static/xhs-pc-web/public/resource/js/vendor.8b70bcb1.js"
+        },
+        {
+          "level": 3,
+          "message": "[apm] region is required!",
+          "line": 1,
+          "sourceId": "https://fe-static.xhscdn.com/formula-static/xhs-pc-web/public/resource/js/vendor-dynamic.273b337d.js"
+        },
+        {
+          "level": 3,
+          "message": "Hydration completed but contains mismatches.",
+          "line": 1,
+          "sourceId": "https://fe-static.xhscdn.com/formula-static/xhs-pc-web/public/resource/js/library-vue.987332a8.js"
+        },
+        {
+          "level": 3,
+          "message": "[loginStatusInterceptor] Response error: HTTPServerError: 无登录信息，或登录信息为空 [object Object] [object Object]",
+          "line": 25,
+          "sourceId": "https://fe-static.xhscdn.com/formula-static/xhs-pc-web/public/resource/js/index.ae1f92dc.js"
+        },
+        {
+          "level": 3,
+          "message": "[loginStatusInterceptor] Response error: HTTPServerError: 无登录信息，或登录信息为空 [object Object] [object Object]",
+          "line": 25,
+          "sourceId": "https://fe-static.xhscdn.com/formula-static/xhs-pc-web/public/resource/js/index.ae1f92dc.js"
+        },
+        {
+          "level": 3,
+          "message": "[loginStatusInterceptor] Response error: HTTPServerError: 无登录信息，或登录信息为空 [object Object] [object Object]",
+          "line": 25,
+          "sourceId": "https://fe-static.xhscdn.com/formula-static/xhs-pc-web/public/resource/js/index.ae1f92dc.js"
+        },
+        {
+          "level": 3,
+          "message": "[loginStatusInterceptor] Response error: HTTPServerError: 无登录信息，或登录信息为空 [object Object] [object Object]",
+          "line": 25,
+          "sourceId": "https://fe-static.xhscdn.com/formula-static/xhs-pc-web/public/resource/js/index.ae1f92dc.js"
+        },
+        {
+          "level": 3,
+          "message": "[loginStatusInterceptor] Response error: HTTPServerError: 无登录信息，或登录信息为空 [object Object] [object Object]",
+          "line": 25,
+          "sourceId": "https://fe-static.xhscdn.com/formula-static/xhs-pc-web/public/resource/js/index.ae1f92dc.js"
+        },
+        {
+          "level": 3,
+          "message": "TypeError: i is not a function",
+          "line": 1,
+          "sourceId": "https://www.xiaohongshu.com/explore"
+        },
+        {
+          "level": 2,
+          "message": "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged.",
+          "line": 2,
+          "sourceId": "node:electron/js2c/sandbox_bundle"
+        }
+      ],
+      "events": [
+        {
+          "name": "did-start-navigation",
+          "atMs": 1786384483924,
+          "url": "https://www.xiaohongshu.com/explore"
+        },
+        {
+          "name": "did-navigate",
+          "atMs": 1786384484315,
+          "url": "https://www.xiaohongshu.com/explore",
+          "httpResponseCode": 200,
+          "httpStatusText": ""
+        },
+        {
+          "name": "did-start-navigation",
+          "atMs": 1786384486351,
+          "url": "https://www.xiaohongshu.com/explore"
+        },
+        {
+          "name": "dom-ready",
+          "atMs": 1786384486447,
+          "url": "https://www.xiaohongshu.com/explore"
+        },
+        {
+          "name": "did-start-navigation",
+          "atMs": 1786384486820,
+          "url": "https://www.xiaohongshu.com/explore"
+        },
+        {
+          "name": "did-finish-load",
+          "atMs": 1786384488626,
+          "url": "https://www.xiaohongshu.com/explore"
+        }
+      ]
+    },
+    {
+      "platform": "douyin",
+      "requestedUrl": "https://www.douyin.com/",
+      "finalUrl": "https://www.douyin.com/jingxuan",
+      "durationMs": 15210,
+      "loadResult": {
+        "status": "resolved"
+      },
+      "dom": {
+        "url": "https://www.douyin.com/jingxuan",
+        "title": "抖音精选电脑版 - 抖音旗下优质视频平台",
+        "readyState": "complete",
+        "htmlLength": 999750,
+        "bodyTextLength": 847,
+        "bodyHtmlLength": 874268,
+        "bodyChildCount": 162,
+        "rootHtmlLength": 273724,
+        "bodyDisplay": "block",
+        "bodyVisibility": "visible",
+        "bodyOpacity": "1",
+        "bodyBackground": "rgba(0, 0, 0, 0)",
+        "bodyWidth": 984,
+        "bodyHeight": 641
+      },
+      "evaluateError": null,
+      "rendererGone": null,
+      "screenshot": {
+        "width": 984,
+        "height": 641,
+        "sampled": 5330,
+        "whiteRatio": 0.0013,
+        "transparentRatio": 0
+      },
+      "screenshotError": null,
+      "screenshotPath": "C:\\Users\\c1732\\Desktop\\技术相关源码\\项目等等\\抖音下载1\\抖音下载器win版\\_automation_test\\login-window-live-results\\douyin.png",
+      "consoleErrors": [
+        {
+          "level": 2,
+          "message": "Document-Policy HTTP header: Unrecognized document policy feature name include-js-call-stacks-in-crash-reports.",
+          "line": 0,
+          "sourceId": "https://www.douyin.com/"
+        },
+        {
+          "level": 3,
+          "message": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+          "line": 0,
+          "sourceId": "https://www.douyin.com/"
+        },
+        {
+          "level": 2,
+          "message": "Document-Policy HTTP header: Unrecognized document policy feature name include-js-call-stacks-in-crash-reports.",
+          "line": 0,
+          "sourceId": "https://www.douyin.com/"
+        },
+        {
+          "level": 3,
+          "message": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+          "line": 38,
+          "sourceId": "https://lf-cdn-tos.bytescm.com/obj/rc-verifycenter/rmc-nocaptcha/1.0.0.44/setup.js"
+        },
+        {
+          "level": 3,
+          "message": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+          "line": 38,
+          "sourceId": "https://lf-cdn-tos.bytescm.com/obj/rc-verifycenter/rmc-nocaptcha/1.0.0.44/setup.js"
+        },
+        {
+          "level": 2,
+          "message": "[SDK] 1786384504049        0 already inited",
+          "line": 1,
+          "sourceId": "https://lf3-short.ibytedapm.com/slardar/fe/sdk-web/browser.cn.js?bid=douyin_web&globalName=Slardar"
+        },
+        {
+          "level": 3,
+          "message": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+          "line": 0,
+          "sourceId": "https://www.douyin.com/jingxuan"
+        },
+        {
+          "level": 3,
+          "message": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+          "line": 0,
+          "sourceId": "https://www.douyin.com/jingxuan"
+        },
+        {
+          "level": 3,
+          "message": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+          "line": 0,
+          "sourceId": "https://www.douyin.com/jingxuan"
+        },
+        {
+          "level": 3,
+          "message": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+          "line": 2,
+          "sourceId": "https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/player-7.0b7320f6.js"
+        },
+        {
+          "level": 3,
+          "message": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+          "line": 2,
+          "sourceId": "https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/player-7.0b7320f6.js"
+        },
+        {
+          "level": 3,
+          "message": "The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+          "line": 2,
+          "sourceId": "https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/player-7.0b7320f6.js"
+        },
+        {
+          "level": 2,
+          "message": "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged.",
+          "line": 2,
+          "sourceId": "node:electron/js2c/sandbox_bundle"
+        }
+      ],
+      "events": [
+        {
+          "name": "did-start-navigation",
+          "atMs": 1786384493841,
+          "url": "https://www.douyin.com/"
+        },
+        {
+          "name": "did-navigate",
+          "atMs": 1786384494178,
+          "url": "https://www.douyin.com/",
+          "httpResponseCode": 200,
+          "httpStatusText": ""
+        },
+        {
+          "name": "did-finish-load",
+          "atMs": 1786384494255,
+          "url": "https://www.douyin.com/"
+        },
+        {
+          "name": "did-start-navigation",
+          "atMs": 1786384494256,
+          "url": "https://www.douyin.com/"
+        },
+        {
+          "name": "did-navigate",
+          "atMs": 1786384494867,
+          "url": "https://www.douyin.com/",
+          "httpResponseCode": 200,
+          "httpStatusText": ""
+        },
+        {
+          "name": "dom-ready",
+          "atMs": 1786384497070,
+          "url": "https://www.douyin.com/"
+        },
+        {
+          "name": "did-start-navigation",
+          "atMs": 1786384503877,
+          "url": "https://www.douyin.com/"
+        },
+        {
+          "name": "did-start-navigation",
+          "atMs": 1786384504057,
+          "url": "https://www.douyin.com/jingxuan"
+        },
+        {
+          "name": "did-finish-load",
+          "atMs": 1786384508896,
+          "url": "https://www.douyin.com/jingxuan"
+        }
+      ]
+    },
+    {
+      "platform": "kuaishou",
+      "requestedUrl": "https://passport.kuaishou.com/",
+      "finalUrl": "https://passport.kuaishou.com/pc/account/login",
+      "durationMs": 6235,
+      "loadResult": {
+        "status": "resolved"
+      },
+      "dom": {
+        "url": "https://passport.kuaishou.com/pc/account/login",
+        "title": "快手，记录世界 记录你",
+        "readyState": "complete",
+        "htmlLength": 138757,
+        "bodyTextLength": 210,
+        "bodyHtmlLength": 6460,
+        "bodyChildCount": 8,
+        "rootHtmlLength": 2906,
+        "bodyDisplay": "block",
+        "bodyVisibility": "visible",
+        "bodyOpacity": "1",
+        "bodyBackground": "rgba(0, 0, 0, 0)",
+        "bodyWidth": 1200,
+        "bodyHeight": 900
+      },
+      "evaluateError": null,
+      "rendererGone": null,
+      "screenshot": {
+        "width": 984,
+        "height": 641,
+        "sampled": 5330,
+        "whiteRatio": 0.7912,
+        "transparentRatio": 0
+      },
+      "screenshotError": null,
+      "screenshotPath": "C:\\Users\\c1732\\Desktop\\技术相关源码\\项目等等\\抖音下载1\\抖音下载器win版\\_automation_test\\login-window-live-results\\kuaishou.png",
+      "consoleErrors": [
+        {
+          "level": 2,
+          "message": "A preload for 'https://w2.kskwai.com/kos/nlav12555/css/app.86505cd2.css' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute.",
+          "line": 21,
+          "sourceId": "https://passport.kuaishou.com/pc/account/login"
+        },
+        {
+          "level": 2,
+          "message": "[warn 102] user_id 为空，请确定是否传入，如果是异步通过 updateCommonPackage 接口传入，可以忽略该提示!",
+          "line": 44,
+          "sourceId": "https://w2.kskwai.com/kos/nlav12555/js/weblogger.72cd808e.js"
+        },
+        {
+          "level": 3,
+          "message": "Uncaught (in promise) TypeError: Failed to construct 'URL': Invalid URL",
+          "line": 2,
+          "sourceId": "node:electron/js2c/sandbox_bundle"
+        },
+        {
+          "level": 2,
+          "message": "[warn 102] user_id 为空，请确定是否传入，如果是异步通过 updateCommonPackage 接口传入，可以忽略该提示!",
+          "line": 44,
+          "sourceId": "https://w2.kskwai.com/kos/nlav12555/js/app.9eea2fb3.js"
+        },
+        {
+          "level": 3,
+          "message": "[Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' *.wskwai.com *.ksapisrv.com *.kskwai.com http://*.yximgs.com *.kuaishou.com http://*.kwimgs.com http://*.adukwai.com http://*.adbkwai.com *.adkwai.com *.eckwai.com *.kuaishouzt.cn *.gifshow.com blob:\".\n",
+          "line": 1,
+          "sourceId": "https://h23.static.yximgs.com/kcdn/cdn-kcdn112369/kwf/kwf-0.0.2.2cee19b4b7dec496.js?x-kcdn-pid=112369"
+        }
+      ],
+      "events": [
+        {
+          "name": "did-start-navigation",
+          "atMs": 1786384509251,
+          "url": "https://passport.kuaishou.com/"
+        },
+        {
+          "name": "did-redirect-navigation",
+          "atMs": 1786384509510,
+          "url": "https://passport.kuaishou.com/pc/account/login"
+        },
+        {
+          "name": "did-navigate",
+          "atMs": 1786384509680,
+          "url": "https://passport.kuaishou.com/pc/account/login",
+          "httpResponseCode": 200,
+          "httpStatusText": "OK"
+        },
+        {
+          "name": "dom-ready",
+          "atMs": 1786384510306,
+          "url": "https://passport.kuaishou.com/pc/account/login"
+        },
+        {
+          "name": "did-finish-load",
+          "atMs": 1786384510416,
+          "url": "https://passport.kuaishou.com/pc/account/login"
+        }
+      ]
+    },
+    {
+      "platform": "bilibili",
+      "requestedUrl": "https://passport.bilibili.com/login",
+      "finalUrl": "https://passport.bilibili.com/login",
+      "durationMs": 6671,
+      "loadResult": {
+        "status": "resolved"
+      },
+      "dom": {
+        "url": "https://passport.bilibili.com/login",
+        "title": "账号登录",
+        "readyState": "complete",
+        "htmlLength": 38911,
+        "bodyTextLength": 854,
+        "bodyHtmlLength": 16647,
+        "bodyChildCount": 5,
+        "rootHtmlLength": 11076,
+        "bodyDisplay": "block",
+        "bodyVisibility": "visible",
+        "bodyOpacity": "1",
+        "bodyBackground": "rgb(246, 247, 248)",
+        "bodyWidth": 967,
+        "bodyHeight": 1150
+      },
+      "evaluateError": null,
+      "rendererGone": null,
+      "screenshot": {
+        "width": 984,
+        "height": 641,
+        "sampled": 5330,
+        "whiteRatio": 0.7777,
+        "transparentRatio": 0
+      },
+      "screenshotError": null,
+      "screenshotPath": "C:\\Users\\c1732\\Desktop\\技术相关源码\\项目等等\\抖音下载1\\抖音下载器win版\\_automation_test\\login-window-live-results\\bilibili.png",
+      "consoleErrors": [
+        {
+          "level": 2,
+          "message": "%cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged.",
+          "line": 2,
+          "sourceId": "node:electron/js2c/sandbox_bundle"
+        }
+      ],
+      "events": [
+        {
+          "name": "did-start-navigation",
+          "atMs": 1786384515536,
+          "url": "https://passport.bilibili.com/login"
+        },
+        {
+          "name": "did-navigate",
+          "atMs": 1786384515842,
+          "url": "https://passport.bilibili.com/login",
+          "httpResponseCode": 200,
+          "httpStatusText": ""
+        },
+        {
+          "name": "dom-ready",
+          "atMs": 1786384516442,
+          "url": "https://passport.bilibili.com/login"
+        },
+        {
+          "name": "did-start-navigation",
+          "atMs": 1786384516614,
+          "url": "https://passport.bilibili.com/login"
+        },
+        {
+          "name": "did-finish-load",
+          "atMs": 1786384517138,
+          "url": "https://passport.bilibili.com/login"
+        }
+      ]
+    }
+  ]
+}

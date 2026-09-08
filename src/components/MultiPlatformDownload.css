@@ -1,0 +1,480 @@
+/* 多平台下载页面 */
+.multiplatform-page {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.page-subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: -8px 0 20px;
+}
+
+/* 输入区 */
+.mp-input-card {
+  margin-bottom: 16px;
+}
+
+.mp-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mp-input-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mp-input-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.mp-textarea {
+  width: 100%;
+  min-height: 90px;
+  padding: 12px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.mp-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.mp-textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.mp-parse-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mp-parse-btn {
+  min-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* 加载动画 */
+.mp-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: mp-spin 0.8s linear infinite;
+}
+
+@keyframes mp-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 错误 / 消息提示 */
+.mp-error-card,
+.mp-msg-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+}
+
+.mp-error-card {
+  border-color: var(--danger);
+  background: rgba(245, 63, 63, 0.06);
+}
+
+.mp-msg-success {
+  border-color: var(--success);
+  background: rgba(0, 180, 42, 0.06);
+}
+
+.mp-msg-error {
+  border-color: var(--danger);
+  background: rgba(245, 63, 63, 0.06);
+}
+
+.mp-error-icon,
+.mp-msg-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.mp-error-text,
+.mp-msg-text {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+/* 解析结果 */
+.mp-result-card {
+  margin-bottom: 16px;
+}
+
+.mp-result-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mp-platform-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--accent-muted);
+  color: var(--accent);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mp-type-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mp-type-video {
+  background: rgba(51, 112, 255, 0.1);
+  color: var(--accent);
+}
+
+.mp-type-image {
+  background: rgba(255, 136, 0, 0.1);
+  color: var(--warning);
+}
+
+/* 视频信息 */
+.mp-video-info {
+  display: flex;
+  gap: 16px;
+}
+
+.mp-cover {
+  flex-shrink: 0;
+  width: 200px;
+  height: 260px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-muted);
+}
+
+.mp-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mp-info-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.mp-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.mp-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.mp-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mp-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.mp-stat {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.mp-video-detail,
+.mp-album-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.mp-detail-item {
+  padding: 3px 8px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-muted);
+  border-radius: 4px;
+}
+
+.mp-detail-warn {
+  background: rgba(255, 125, 0, 0.1);
+  color: var(--warning);
+}
+
+.mp-livephoto {
+  color: var(--warning);
+}
+
+/* 图集预览 */
+.mp-album-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.mp-album-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-muted);
+}
+
+.mp-album-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mp-livephoto-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+/* 下载按钮 */
+.mp-download-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.mp-download-btn {
+  min-width: 200px;
+}
+
+/* 平台列表卡片 */
+.mp-platforms-card {
+  margin-top: 4px;
+}
+
+.mp-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 16px;
+}
+
+.mp-platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.mp-platform-chip {
+  padding: 10px 12px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.mp-platform-chip:hover {
+  border-color: var(--accent);
+}
+
+/* 平台卡片头部：logo + 文字横向排列 */
+.mp-platform-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 平台 logo：圆形裁剪图片，白底衬托透明背景的图标 */
+.mp-platform-logo {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* 找不到真实 logo 时的兜底：品牌色背景 + 首字 */
+.mp-platform-logo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* 平台文字区：名字 + 功能标签纵向排列 */
+.mp-platform-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0; /* 允许文字截断 */
+}
+
+/* 可点击的平台卡片：点击跳转官网 */
+.mp-platform-clickable {
+  cursor: pointer;
+}
+
+.mp-platform-clickable:hover {
+  background: var(--accent-muted);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.mp-platform-clickable:active {
+  transform: translateY(0);
+}
+
+.mp-platform-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mp-platform-features {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+/* 响应式 */
+@media (max-width: 600px) {
+  .mp-video-info {
+    flex-direction: column;
+  }
+
+  .mp-cover {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/* ===== 清晰度选择弹窗 ===== */
+.mp-quality-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:1000;animation:mp-fade-in 0.2s ease}
+@keyframes mp-fade-in{from{opacity:0}to{opacity:1}}
+.mp-quality-modal{width:92%;max-width:440px;max-height:80vh;display:flex;flex-direction:column;background:var(--bg-card);border:1px solid var(--border-default);border-radius:16px;box-shadow:0 24px 70px rgba(0,0,0,0.45);overflow:hidden;animation:mp-modal-in 0.25s cubic-bezier(0.16,1,0.3,1)}
+@keyframes mp-modal-in{from{opacity:0;transform:translateY(20px) scale(0.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.mp-quality-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 12px;border-bottom:1px solid var(--border-default)}
+.mp-quality-header h3{font-size:17px;font-weight:700;margin:0;color:var(--text-primary)}
+.mp-quality-close{width:28px;height:28px;border:none;background:transparent;color:var(--text-tertiary);font-size:16px;cursor:pointer;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s}
+.mp-quality-close:hover{background:var(--bg-subtle);color:var(--text-primary)}
+.mp-quality-tip{margin:0;padding:12px 20px;font-size:12px;color:var(--text-tertiary);line-height:1.5;border-bottom:1px solid var(--border-muted);background:var(--bg-subtle)}
+.mp-quality-list{padding:8px;overflow-y:auto;flex:1}
+.mp-quality-item{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:12px 16px;margin-bottom:4px;border:1px solid var(--border-muted);border-radius:10px;background:var(--bg-subtle);text-align:left;cursor:pointer;transition:background 0.2s,border-color 0.2s,transform 0.1s}
+.mp-quality-item:hover{background:var(--bg-inset);border-color:var(--accent)}
+.mp-quality-item:active{transform:scale(0.98)}
+.mp-quality-item-top{background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(236,72,153,0.08));margin-bottom:8px;border-color:transparent}
+.mp-quality-item-top:hover{background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(236,72,153,0.15));border-color:rgba(139,92,246,0.4)}
+.mp-quality-name{font-size:15px;font-weight:600;color:var(--text-primary);display:inline-flex;align-items:center;gap:6px}
+.mp-quality-item-top .mp-quality-name{background:linear-gradient(135deg,#6366f1,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mp-quality-badge{display:inline-block;padding:1px 6px;font-size:10px;font-weight:600;color:#fff;background:linear-gradient(135deg,#f59e0b,#ec4899);border-radius:6px;line-height:1.4}
+.mp-quality-desc{font-size:12px;color:var(--text-tertiary)}
+
+/* ===== 弹窗增强：编码/大小/推荐 ===== */
+.mp-quality-title-line{margin:0;padding:8px 20px 10px;font-size:13px;color:var(--text-secondary);line-height:1.4;border-bottom:1px solid var(--border-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mp-quality-meta{font-size:12px;color:var(--text-tertiary);line-height:1.5}
+.mp-quality-item.is-recommend{border-color:rgba(99,102,241,0.35);background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(236,72,153,0.04))}
+.mp-quality-item.is-recommend:hover{border-color:rgba(99,102,241,0.6);background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(236,72,153,0.06))}
+.mp-quality-recommend{display:inline-block;padding:1px 6px;font-size:10px;font-weight:600;color:#fff;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:6px;line-height:1.4;vertical-align:middle}
+.mp-quality-item-top .mp-quality-recommend{background:rgba(255,255,255,0.25);color:#fff}
+.mp-quality-footer{padding:10px 20px 16px;display:flex;justify-content:flex-end;border-top:1px solid var(--border-muted);background:var(--bg-subtle)}
+
+/* ===== 模式切换 tab ===== */
+.mp-mode-tabs{display:flex;gap:6px;margin-bottom:14px;padding:4px;background:var(--bg-subtle);border:1px solid var(--border-muted);border-radius:10px;width:fit-content}
+.mp-mode-tab{padding:7px 16px;font-size:13px;font-weight:600;color:var(--text-secondary);background:transparent;border:none;border-radius:7px;cursor:pointer;transition:all 0.18s}
+.mp-mode-tab:hover{color:var(--text-primary)}
+.mp-mode-tab.active{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(99,102,241,0.3)}
+
+/* ===== 批量列表 ===== */
+.mp-batch-card{margin-bottom:16px;padding:14px 16px}
+.mp-batch-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-bottom:12px;margin-bottom:10px;border-bottom:1px solid var(--border-muted)}
+.mp-batch-select-all{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-primary);cursor:pointer;user-select:none}
+.mp-batch-select-all input{cursor:pointer;width:15px;height:15px;accent-color:var(--accent)}
+.mp-batch-count{font-size:12px;color:var(--text-tertiary);flex:1;min-width:120px}
+.mp-batch-download-btn{min-width:160px;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.mp-batch-list{display:flex;flex-direction:column;gap:8px}
+.mp-batch-item{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--border-muted);border-radius:10px;background:var(--bg-subtle);transition:all 0.18s}
+.mp-batch-item:hover{border-color:var(--accent);background:var(--bg-inset)}
+.mp-batch-item.is-fail{opacity:0.7;background:rgba(245,63,63,0.04);border-color:rgba(245,63,63,0.2)}
+.mp-batch-item.is-downloading{border-color:var(--accent);background:var(--accent-muted)}
+.mp-batch-item.is-done{opacity:0.75;background:rgba(0,180,42,0.05);border-color:rgba(0,180,42,0.25)}
+.mp-batch-check{flex-shrink:0;display:flex;align-items:center}
+.mp-batch-check input{cursor:pointer;width:16px;height:16px;accent-color:var(--accent)}
+.mp-batch-cover{flex-shrink:0;width:56px;height:56px;border-radius:8px;overflow:hidden;background:var(--bg-tertiary);border:1px solid var(--border-muted);display:flex;align-items:center;justify-content:center}
+.mp-batch-cover img{width:100%;height:100%;object-fit:cover}
+.mp-batch-cover-fallback{font-size:22px}
+.mp-batch-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.mp-batch-info-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mp-batch-platform-logo{width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.mp-batch-platform-name{font-size:12px;font-weight:600;color:var(--text-secondary)}
+.mp-batch-type-badge{font-size:11px;font-weight:600;padding:1px 7px;border-radius:8px}
+.mp-batch-status{font-size:11px;font-weight:600;padding:1px 7px;border-radius:8px;margin-left:auto}
+.mp-batch-status-pending{background:var(--bg-tertiary);color:var(--text-tertiary)}
+.mp-batch-status-downloading{background:rgba(99,102,241,0.15);color:var(--accent)}
+.mp-batch-status-done{background:rgba(0,180,42,0.15);color:var(--success)}
+.mp-batch-status-fail{background:rgba(245,63,63,0.15);color:var(--danger)}
+.mp-batch-title{font-size:13px;font-weight:500;color:var(--text-primary);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mp-batch-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:11px;color:var(--text-tertiary)}
+.mp-batch-error-text{color:var(--danger)}
+
+/* 响应式：批量列表在小屏上缩小封面 */
+@media (max-width: 600px) {
+  .mp-batch-cover{width:44px;height:44px}
+  .mp-batch-platform-name{display:none}
+  .mp-batch-toolbar{gap:8px}
+}

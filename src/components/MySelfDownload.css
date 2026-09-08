@@ -1,0 +1,227 @@
+/* ===== 我的账号（下载专区）：当前登录账号的自我数据下载 ===== */
+
+.my-self-download {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.my-self-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary, #222);
+  margin-bottom: 8px;
+}
+
+.my-self-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary, #888);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 760px;
+}
+
+.my-likes-card {
+  margin-bottom: 16px;
+}
+
+.my-likes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.my-likes-info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.my-likes-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-primary, #222);
+}
+
+.my-likes-desc {
+  font-size: 13px;
+  color: var(--text-secondary, #888);
+  line-height: 1.6;
+}
+
+.my-likes-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.my-likes-controls .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.my-likes-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary, #888);
+  white-space: nowrap;
+}
+
+/* 6 个数据类别 tab（与主页下载的 type-tab 样式一致） */
+.my-self-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.my-self-tabs .type-tab {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.my-self-tabs .type-tab:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.my-self-tabs .type-tab-active {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+}
+
+/* 进度 */
+.my-likes-progress {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--accent-soft, rgba(254, 44, 85, 0.06));
+  border-radius: 8px;
+  border: 1px solid var(--accent-muted, rgba(254, 44, 85, 0.2));
+}
+
+.my-likes-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.my-likes-progress-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #222);
+}
+
+.my-likes-progress-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent, #fe2c55);
+}
+
+.my-likes-progress-bar-wrap {
+  height: 8px;
+  background: var(--bg-inset, #f0f0f0);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.my-likes-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent, #fe2c55), #764ba2);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.my-likes-progress-text {
+  font-size: 13px;
+  color: var(--text-secondary, #888);
+  text-align: center;
+}
+
+/* 错误提示（与我的账号页一致） */
+.my-accounts-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-top: 14px;
+  border-radius: 8px;
+  background: rgba(240, 68, 56, 0.1);
+  color: #f04438;
+  font-size: 13px;
+}
+
+/* 结果弹窗 */
+.my-likes-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.my-likes-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-primary, #222);
+  cursor: pointer;
+}
+
+.my-likes-list {
+  max-height: 46vh;
+  overflow-y: auto;
+}
+
+.my-likes-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.my-likes-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.my-likes-item-check {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent, #fe2c55);
+}
+
+.my-likes-item .work-cover {
+  flex-shrink: 0;
+}
+
+.my-likes-item .work-main {
+  min-width: 0;
+}
+
+.my-likes-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-default, #e5e5e5);
+}

@@ -1,0 +1,90 @@
+.comment-download {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.video-info-section {
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+}
+
+.video-info-section h3 {
+  color: #10b981;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.video-info-card {
+  background: var(--bg-primary);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.video-details p {
+  margin: 8px 0;
+  color: var(--text-primary);
+}
+
+.video-details strong {
+  color: var(--text-secondary);
+  margin-right: 8px;
+}
+
+.success-message {
+  color: #10b981;
+  font-weight: 500;
+  margin-top: 16px !important;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.instructions {
+  color: var(--text-primary);
+}
+
+.instructions ol {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+.instructions ol li {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.csv-format-info {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+}
+
+.csv-format-info h4 {
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.csv-format-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.csv-format-info ul li {
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  color: var(--text-primary);
+}
+
+.csv-format-info ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}

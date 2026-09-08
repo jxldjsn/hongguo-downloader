@@ -1,0 +1,332 @@
+/* 内置浏览器（快速下载卡片内触发按钮 + 弹窗展示）：浏览抖音页面自动收集作品链接 */
+.qb-open-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  background: var(--bg-subtle);
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+}
+
+.qb-open-btn:hover {
+  border-color: var(--accent);
+}
+
+.qb-toggle-icon {
+  color: var(--accent);
+}
+
+.qb-hint {
+  color: var(--text-tertiary);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.qb-open-arrow {
+  margin-left: auto;
+  color: var(--text-tertiary);
+}
+
+/* 浏览器弹窗 */
+.qb-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 18, 25, 0.45);
+  backdrop-filter: blur(2px);
+  animation: qb-fade-in 0.18s ease;
+}
+
+@keyframes qb-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.qb-modal {
+  display: flex;
+  flex-direction: column;
+  width: min(1120px, 94vw);
+  height: min(88vh, 820px);
+  background: var(--bg-card);
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.qb-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-subtle);
+}
+
+.qb-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.qb-modal-title .qb-hint {
+  margin-left: 4px;
+}
+
+.qb-modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.qb-modal-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-primary);
+}
+
+.qb-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-default);
+  background: var(--bg-card);
+}
+
+.qb-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border: 1px solid var(--border-default);
+  border-radius: 7px;
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.qb-nav-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.qb-nav-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.qb-address {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 1px 3px 1px 1px;
+}
+
+.qb-address input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12.5px;
+  padding: 5px 9px;
+  color: var(--text-primary);
+}
+
+.qb-go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  min-width: 26px;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.qb-go:hover {
+  opacity: 0.88;
+}
+
+.qb-home-btn {
+  height: 28px;
+  padding: 0 12px;
+  border: 1px solid var(--border-default);
+  border-radius: 7px;
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.qb-home-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.qb-webview-wrap {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  background: #fff;
+}
+
+.qb-webview {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.qb-loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), #8b5cf6);
+  animation: qb-load 1.1s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes qb-load {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.qb-links {
+  padding: 12px 14px 14px;
+}
+
+.qb-links-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.qb-links-head > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.qb-count {
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 1px 7px;
+}
+
+.qb-links-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.qb-empty {
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 12.5px;
+  padding: 14px 0 6px;
+}
+
+.qb-link-list {
+  max-height: 180px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.qb-link-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.qb-link-idx {
+  color: var(--text-tertiary);
+  font-size: 11px;
+  min-width: 18px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.qb-link-url {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.qb-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.qb-link-btn:hover {
+  color: var(--accent);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.qb-link-del:hover {
+  color: var(--danger, #e5484d);
+  background: rgba(229, 72, 77, 0.08);
+}

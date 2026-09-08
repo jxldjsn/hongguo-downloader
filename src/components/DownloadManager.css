@@ -1,0 +1,683 @@
+.download-manager {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 标签页和操作按钮容器 */
+.tabs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+/* 标签页 */
+.tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0;
+  flex: 1;
+}
+
+/* 批量操作按钮 */
+.batch-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.btn-danger:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+}
+
+.tab-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* 按钮图标 */
+.btn-icon {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: transform 0.2s ease;
+}
+
+.btn-icon:hover {
+  transform: scale(1.2);
+}
+
+.download-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.download-item {
+  padding: 16px;
+}
+
+.download-info {
+  margin-bottom: 8px;
+}
+
+.download-filename {
+  font-weight: 500;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 平台标签（下载列表区分来源平台） */
+.download-platform-badge {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 1px 8px;
+  background: var(--accent-muted);
+  color: var(--accent);
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* 图集任务前的文件夹图标 */
+.album-icon {
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.download-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+/* 下载操作按钮 */
+.download-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.btn-stop {
+  color: #ffc107;
+}
+
+.btn-stop:hover {
+  transform: scale(1.2);
+  color: #ff9800;
+}
+
+.btn-delete {
+  color: #dc3545;
+}
+
+.btn-delete:hover {
+  transform: scale(1.2);
+  color: #c82333;
+}
+
+.download-status {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.status-parsing {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  animation: xhs-parsing-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes xhs-parsing-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+.status-pending {
+  background: rgba(156, 163, 175, 0.2);
+  color: #9ca3af;
+}
+
+.status-downloading {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.status-completed {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.status-partial {
+  background: rgba(234, 179, 8, 0.2);
+  color: #ca8a04;
+}
+
+.status-stopped {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.status-failed {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.download-size {
+  color: var(--text-secondary);
+}
+
+.download-date {
+  color: var(--text-secondary);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.download-link-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 12px;
+  min-width: 0;
+}
+
+.download-link-label {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.download-link-text {
+  color: var(--primary, #6366f1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+}
+
+.download-link-text:hover {
+  text-decoration: underline;
+}
+
+.btn-copy-link {
+  flex-shrink: 0;
+  padding: 2px 10px;
+  font-size: 11px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.btn-copy-link:hover {
+  background: var(--hover-bg, rgba(99, 102, 241, 0.1));
+  color: var(--primary, #6366f1);
+}
+
+.btn-icon.btn-retry {
+  color: var(--accent, #3b82f6);
+}
+
+.btn-icon.btn-retry:hover {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.download-error {
+  color: #ef4444;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skipped-badge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 11px;
+  background: var(--accent-muted);
+  color: var(--accent);
+}
+
+/* 任务备注（如 DASH 合并失败回退提示） */
+.download-note {
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #f59e0b;
+  font-size: 11px;
+}
+
+.progress-bar-container {
+  position: relative;
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  right: 0;
+  top: -18px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* 直播录制加载动画 */
+.loading-bar {
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover), var(--accent));
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ===== 小红书主页批量下载：折叠分组 ===== */
+.xhs-batch-group {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-card, var(--bg-primary, #fff));
+}
+
+.xhs-batch-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.xhs-batch-header:hover {
+  background: var(--bg-secondary, rgba(0, 0, 0, 0.03));
+}
+
+.xhs-batch-toggle {
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-secondary);
+  transition: transform 0.15s ease;
+}
+
+.xhs-batch-avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-secondary);
+}
+
+.xhs-batch-avatar-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.xhs-batch-nickname {
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.xhs-batch-profile-url {
+  font-size: 12px;
+  color: var(--accent, #3b82f6);
+  text-decoration: underline;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.xhs-batch-profile-url:hover {
+  opacity: 0.8;
+}
+
+.xhs-batch-count {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.xhs-batch-progress {
+  flex: 1;
+  min-width: 80px;
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.xhs-batch-progress .progress-bar {
+  border-radius: 3px;
+}
+
+.xhs-batch-actions {
+  flex-shrink: 0;
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+/* 分组展开后的明细任务，缩进并加底色区分 */
+.xhs-batch-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 12px 12px;
+  background: var(--bg-secondary, rgba(0, 0, 0, 0.02));
+  border-top: 1px solid var(--border-color);
+}
+
+.xhs-batch-body .download-item {
+  padding: 12px;
+  background: var(--bg-card, var(--bg-primary, #fff));
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+/* ===== 批量下载详情弹窗 ===== */
+.download-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.download-modal {
+  background: var(--bg-card, var(--bg-primary, #fff));
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 860px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.download-modal-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.download-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.download-modal-icon {
+  font-size: 28px;
+}
+
+.download-modal-title h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.download-modal-sub {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.download-modal-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-modal-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.btn-modal-close:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.download-modal-progress-bar-wrap {
+  width: 100%;
+  height: 4px;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+/* 弹窗内部分类标签页 */
+.download-modal-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--bg-secondary, rgba(0, 0, 0, 0.02));
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.modal-tab:hover {
+  color: var(--text-primary);
+  background: var(--bg-card, #fff);
+}
+
+.modal-tab.active {
+  color: var(--accent, #3b82f6);
+  background: var(--bg-card, #fff);
+  border-color: var(--border-color);
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.modal-empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.download-modal-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.download-modal-body .download-item {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: var(--bg-card);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 分页控件样式 */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: var(--bg-card, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  border-radius: 8px;
+}
+
+.pagination-info {
+  font-size: 13px;
+  color: var(--text-secondary, #aaa);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-page {
+  padding: 5px 12px;
+  font-size: 12px;
+  background: var(--bg-hover, rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+  border-radius: 6px;
+  color: var(--text-primary, #fff);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-page:hover:not(:disabled) {
+  background: var(--accent, #3b82f6);
+  color: #fff;
+  border-color: var(--accent, #3b82f6);
+}
+
+.btn-page:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-page-num {
+  min-width: 30px;
+  height: 30px;
+  padding: 0 6px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-hover, rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+  border-radius: 6px;
+  color: var(--text-secondary, #aaa);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-page-num:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.btn-page-num.active {
+  background: var(--accent, #3b82f6);
+  border-color: var(--accent, #3b82f6);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.pagination-ellipsis {
+  color: var(--text-tertiary, #666);
+  padding: 0 4px;
+}

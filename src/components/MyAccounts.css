@@ -1,0 +1,395 @@
+/* ===== 我的账号（运营专区：绑定自己的抖音账号，看播放量） =====
+   账号卡片/增速弹窗/作品展开复用了 AccountManager.css 的 .account-card 系列样式，
+   这里只保留「我的账号」特有部分：工具栏、空态、展开作品面板。 */
+
+.my-accounts-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.my-accounts-btns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.my-accounts-btns .btn,
+.my-accounts-toolbar > .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.my-accounts-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  background: rgba(240, 68, 56, 0.1);
+  color: #f04438;
+  font-size: 13px;
+}
+
+.my-accounts-empty {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--text-secondary, #888);
+}
+
+.my-accounts-empty-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.my-accounts-empty-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary, #222);
+}
+
+.my-accounts-empty-text {
+  font-size: 13px;
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* 播放量可见标记 */
+.my-account-play-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 2px 8px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+/* 展开的作品面板 */
+.my-account-works-panel {
+  border-top: 1px solid var(--border-default, #e5e5e5);
+  background: var(--bg-subtle, #f8f8f8);
+  padding: 12px 16px;
+}
+
+.my-account-works-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary, #888);
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.my-account-works-sort {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.my-account-works-error {
+  padding: 10px;
+  font-size: 13px;
+  color: #f04438;
+  background: rgba(240, 68, 56, 0.08);
+  border-radius: 6px;
+}
+
+.my-account-works-empty {
+  padding: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary, #888);
+}
+
+.my-account-works-table {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.my-account-works-thead,
+.my-account-works-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.my-account-works-thead {
+  font-size: 12px;
+  color: var(--text-secondary, #888);
+  background: var(--bg-card, #fff);
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.my-account-works-row {
+  background: var(--bg-card, #fff);
+  border-radius: 6px;
+}
+
+.my-account-works-row:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.my-account-w-col-title {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.my-account-w-col {
+  width: 80px;
+  text-align: right;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.my-account-w-play {
+  color: var(--accent, #fe2c55);
+  font-weight: 600;
+}
+
+/* 链接列：窄、居中，小按钮打开作品页 */
+.my-account-w-col-link {
+  width: 64px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.my-account-w-link {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid var(--border-default, #e5e6eb);
+  border-radius: 6px;
+  color: var(--accent, #fe2c55);
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.my-account-w-link:hover {
+  border-color: var(--accent, #fe2c55);
+  background: rgba(254, 44, 85, 0.06);
+}
+
+/* 发布日期列 */
+.my-account-w-col-date {
+  width: 96px;
+  text-align: right;
+  flex-shrink: 0;
+  color: var(--text-secondary, #888);
+  font-size: 12px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== 我的喜欢 ===== */
+.my-likes-card {
+  margin-bottom: 16px;
+}
+
+.my-likes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.my-likes-info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.my-likes-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-primary, #222);
+}
+
+.my-likes-desc {
+  font-size: 13px;
+  color: var(--text-secondary, #888);
+  line-height: 1.6;
+}
+
+.my-likes-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.my-likes-controls .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.my-likes-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary, #888);
+  white-space: nowrap;
+}
+
+/* 进度 */
+.my-likes-progress {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--accent-soft, rgba(254, 44, 85, 0.06));
+  border-radius: 8px;
+  border: 1px solid var(--accent-muted, rgba(254, 44, 85, 0.2));
+}
+
+.my-likes-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.my-likes-progress-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #222);
+}
+
+.my-likes-progress-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent, #fe2c55);
+}
+
+.my-likes-progress-bar-wrap {
+  height: 8px;
+  background: var(--bg-inset, #f0f0f0);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.my-likes-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent, #fe2c55), #764ba2);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.my-likes-progress-text {
+  font-size: 13px;
+  color: var(--text-secondary, #888);
+  text-align: center;
+}
+
+/* 结果弹窗 */
+.my-likes-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.my-likes-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-primary, #222);
+  cursor: pointer;
+}
+
+.my-likes-list {
+  max-height: 46vh;
+  overflow-y: auto;
+}
+
+.my-likes-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.my-likes-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.my-likes-item-check {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent, #fe2c55);
+}
+
+.my-likes-item .work-cover {
+  flex-shrink: 0;
+}
+
+.my-likes-item .work-main {
+  min-width: 0;
+}
+
+.my-likes-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-default, #e5e5e5);
+}
+
+/* 6 个数据类别 tab（与主页下载的 type-tab 样式一致） */
+.my-self-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.my-self-tabs .type-tab {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.my-self-tabs .type-tab:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.my-self-tabs .type-tab-active {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+}

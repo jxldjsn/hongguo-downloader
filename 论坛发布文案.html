@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>抖音-TikTok 多平台下载器｜论坛发布文案</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202124;
+      --muted: #6b7280;
+      --line: #e7e9ee;
+      --surface: #ffffff;
+      --canvas: #f4f6fa;
+      --brand: #ff4d4f;
+      --brand-deep: #e63739;
+      --accent: #ff8a00;
+      --success: #16885b;
+      --shadow: 0 18px 55px rgba(26, 36, 56, .12);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255, 126, 51, .16), transparent 28rem),
+        radial-gradient(circle at 92% 6%, rgba(255, 77, 79, .14), transparent 25rem),
+        var(--canvas);
+      font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+      line-height: 1.72;
+    }
+
+    .page { width: min(100% - 28px, 980px); margin: 34px auto 56px; }
+    .page-head { margin: 0 0 20px; text-align: center; }
+    .page-head h1 { margin: 0; font-size: clamp(23px, 4vw, 32px); line-height: 1.3; letter-spacing: -.03em; }
+    .page-head p { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    button {
+      min-height: 42px;
+      padding: 9px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: #3e4654;
+      background: #fff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 7px rgba(22, 31, 52, .04);
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+    button:hover { transform: translateY(-1px); border-color: #ffc6a2; box-shadow: 0 7px 16px rgba(210, 82, 25, .12); }
+    button:focus-visible, a:focus-visible { outline: 3px solid rgba(255, 121, 0, .32); outline-offset: 3px; }
+    .primary { border-color: transparent; color: #fff; background: linear-gradient(135deg, var(--brand), #ff7426); }
+    .primary:hover { border-color: transparent; box-shadow: 0 8px 20px rgba(235, 73, 55, .28); }
+    #tip { min-height: 22px; margin: 0 0 14px; color: var(--success); text-align: center; font-size: 13px; font-weight: 700; }
+
+    .copy-hint {
+      margin: 0 0 12px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .post-wrap { overflow: hidden; border: 1px solid rgba(230, 226, 225, .96); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    #forum-post { padding: clamp(22px, 5vw, 48px); }
+
+    .post-kicker {
+      display: inline-block;
+      margin: 0 0 9px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      color: #b73a13;
+      background: #fff0e7;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+    .post-title { margin: 0; font-size: clamp(25px, 5vw, 38px); line-height: 1.23; letter-spacing: -.04em; }
+    .post-lead { margin: 16px 0 0; color: #4a5261; font-size: 16px; }
+    .post-lead strong { color: #cc3c26; }
+    .rule { height: 1px; margin: 27px 0; border: 0; background: linear-gradient(90deg, #ffb265, var(--line), transparent); }
+
+    .section { margin-top: 27px; }
+    .section h2 { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: 19px; line-height: 1.45; }
+    .section h2::before { width: 5px; height: 22px; border-radius: 4px; background: linear-gradient(var(--brand), var(--accent)); content: ""; }
+    .section p { margin: 9px 0; }
+    .feature-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 14px 0 0; padding: 0; list-style: none; }
+    .feature-list li { min-height: 82px; padding: 14px 15px; border: 1px solid #f0e9e5; border-radius: 12px; background: linear-gradient(145deg, #fff, #fff9f4); }
+    .feature-list strong { display: block; margin-bottom: 3px; color: #303643; font-size: 15px; }
+    .feature-list span { display: block; color: var(--muted); font-size: 13px; line-height: 1.55; }
+
+    .download-box { margin: 22px 0 0; padding: 23px; border: 1px solid #ffd2b3; border-radius: 14px; color: #653619; background: linear-gradient(135deg, #fff8ef, #fff0e7); }
+    .download-box .download-label { margin: 0 0 5px; color: #b44619; font-size: 13px; font-weight: 800; letter-spacing: .04em; }
+    .download-box h3 { margin: 0; color: #35261e; font-size: 20px; }
+    .download-box p { margin: 7px 0 15px; color: #77543d; font-size: 14px; }
+    .download-link { display: inline-block; padding: 10px 17px; border-radius: 9px; color: #fff !important; background: linear-gradient(135deg, #ff573f, #ff8a00); font-weight: 800; text-decoration: none; box-shadow: 0 7px 15px rgba(239, 93, 28, .2); }
+    .download-url { display: block; margin-top: 12px; overflow-wrap: anywhere; color: #a55024; font-family: Consolas, "Courier New", monospace; font-size: 12px; }
+
+    .steps { margin: 10px 0 0; padding-left: 24px; }
+    .steps li { margin: 8px 0; padding-left: 3px; }
+    .notice { margin-top: 25px; padding: 14px 16px; border-left: 4px solid #ff9b46; border-radius: 0 10px 10px 0; color: #70553f; background: #fff9f2; font-size: 13px; }
+    .post-footer { margin-top: 25px; color: #8a909c; text-align: center; font-size: 12px; }
+
+    .source-box { margin-top: 20px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.82); }
+    .source-box summary { color: #4d5665; font-size: 14px; font-weight: 800; cursor: pointer; }
+    .source-box p { margin: 10px 0; color: var(--muted); font-size: 13px; }
+    textarea { width: 100%; min-height: 260px; padding: 12px; border: 1px solid var(--line); border-radius: 10px; resize: vertical; color: #303643; background: #fbfcfe; font: 12px/1.55 Consolas, "Microsoft YaHei", monospace; }
+
+    @media (max-width: 620px) {
+      .page { width: min(100% - 18px, 980px); margin-top: 20px; }
+      .feature-list { grid-template-columns: 1fr; }
+      #forum-post { padding: 24px 19px; }
+      .toolbar { gap: 8px; }
+      button { flex: 1 1 150px; }
+    }
+    @media print { .page { width: 100%; margin: 0; } .page-head, .toolbar, #tip, .copy-hint, .source-box { display: none; } .post-wrap { border: 0; box-shadow: none; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="page-head">
+      <h1>抖音-TikTok 多平台下载器｜论坛发布文案</h1>
+      <p>点击「复制富文本正文」后，直接粘贴到支持富文本的论坛编辑器即可。</p>
+    </header>
+
+    <div class="toolbar" aria-label="复制操作">
+      <button class="primary" type="button" onclick="copyRichPost()">复制富文本正文</button>
+      <button type="button" onclick="copyMarkdownSource()">复制 Markdown 文案</button>
+      <button type="button" onclick="copyHtmlSource()">复制 HTML 源码</button>
+      <button type="button" onclick="selectPost()">选中正文手动复制</button>
+    </div>
+    <p id="tip" role="status" aria-live="polite"></p>
+    <p class="copy-hint">推荐先使用富文本复制；如论坛要求 HTML 代码模式，请展开下方源码并复制。</p>
+
+    <section class="post-wrap" aria-label="论坛发布正文">
+      <article id="forum-post">
+        <span class="post-kicker">WINDOWS 桌面工具</span>
+        <h1 class="post-title">抖音-TikTok 多平台下载器 v1.0.2</h1>
+        <p class="post-lead">一个面向素材整理与账号运营的 Windows 桌面工具。支持<strong>国内外多平台视频 / 图集解析下载、视频号去水印下载、账号分组管理、作品数据监控与爆款分析</strong>；下载与数据整理可在一个软件内完成。</p>
+
+        <hr class="rule">
+
+        <section class="section">
+          <h2>多平台下载</h2>
+          <p>粘贴<strong>视频链接或分享口令</strong>即可自动识别、解析并加入下载队列。支持视频、图集、部分平台的 LivePhoto 与背景音乐下载；高清 DASH / HLS / 音视频分离资源会自动处理并合成为单个 MP4。</p>
+          <ul class="feature-list">
+            <li><strong>国内主流平台</strong><span>抖音、快手、小红书、哔哩哔哩、微博、皮皮虾、西瓜视频、微视、最右、火山、度小视、梨视频等。</span></li>
+            <li><strong>更多视频平台</strong><span>虎牙、A站（AcFun）、美拍、全民K歌、六间房、好看视频等平台的视频资源解析下载。</span></li>
+            <li><strong>YouTube 与海外平台</strong><span>支持 YouTube 清晰度选择与自动合并音视频；内置 yt-dlp 通用解析，适用于 TikTok 国际版、Instagram、X（Twitter）、Facebook、Reddit 等众多站点。</span></li>
+            <li><strong>抖音无水印下载</strong><span>抖音普通视频下载会优先使用无水印视频地址；图文作品可连同图片、LivePhoto 与背景音乐下载。</span></li>
+            <li><strong>视频号下载</strong><span>独立的视频号下载页面，支持腾讯元宝扫码登录或手动 Cookie、分享链接批量解析、批量下载与流式解密去水印。</span></li>
+            <li><strong>下载任务管理</strong><span>下载任务集中管理，可查看下载状态与结果；支持按需要选择 YouTube / yt-dlp 资源的清晰度。</span></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>账号运营与数据整理</h2>
+          <ul class="feature-list">
+            <li><strong>批量添加账号</strong><span>账号主页链接或 sec_user_id 可按行批量导入，减少重复操作。</span></li>
+            <li><strong>账号分组管理</strong><span>可创建分组、移动账号、按分组筛选，适合整理不同赛道或对标账号。</span></li>
+            <li><strong>分组爆款分析</strong><span>聚合组内账号作品，按发布时间、点赞、播放、点赞增长等条件筛选与排序。</span></li>
+            <li><strong>导出与复制链接</strong><span>筛选结果可导出 CSV（Excel 可直接打开），也可一键复制视频链接，一行一条。</span></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>抖音 / TikTok 运营工具</h2>
+          <ul class="feature-list">
+            <li><strong>主页作品与账号管理</strong><span>支持抖音 / TikTok 相关的主页作品下载、账号添加与分类管理，方便沉淀对标账号与素材。</span></li>
+            <li><strong>直播下载</strong><span>提供直播下载入口，可用于保存有授权的直播内容；实际可用性以直播状态与平台规则为准。</span></li>
+            <li><strong>评论下载与导出</strong><span>支持下载评论数据并导出 CSV，便于后续整理、筛选和分析。</span></li>
+            <li><strong>抖音热榜导出</strong><span>可查看热榜内容并导出 CSV，辅助选题收集与热点整理。</span></li>
+            <li><strong>账号作品监控</strong><span>支持关注账号与作品数据监控，可结合应用通知、系统通知或 Server酱配置接收提醒。</span></li>
+            <li><strong>本地桌面下载管理</strong><span>下载任务统一排队和管理，支持打开下载目录、查看状态与处理不同资源格式。</span></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>爆款分析能力</h2>
+          <p>在「<strong>运营管理 → 账号管理</strong>」中选择账号分组，点击左侧的「<strong>🔥 分组爆款分析</strong>」即可查看组内作品表现。</p>
+          <p>支持设置<strong>发布时间范围、发布至今 7 / 15 / 30 天或自定义天数、点赞区间、播放区间、点赞增长阈值</strong>等筛选条件；还能按<strong>爆款指数、点赞密度、点赞数、播放量、发布时间</strong>等维度排序。</p>
+          <p>爆款识别以<strong>发布时间与当前作品快照数据</strong>为基础，即使软件未持续打开记录增长数据，也可以用于初步筛选高表现作品。</p>
+        </section>
+
+        <section class="download-box">
+          <p class="download-label">软件下载</p>
+          <h3>抖音-TikTok 多平台下载器（Windows）</h3>
+          <p>下载后按安装向导完成安装即可使用。</p>
+          <a class="download-link" href="https://wwbve.lanzoub.com/b00g3spmta" target="_blank" rel="noopener noreferrer">立即下载软件</a>
+          <span class="download-url">https://wwbve.lanzoub.com/b00g3spmta</span>
+        </section>
+
+        <section class="section">
+          <h2>简单使用说明</h2>
+          <ol class="steps">
+            <li>打开「<strong>多平台下载</strong>」，粘贴国内外平台的视频链接或分享口令，解析后选择下载视频或图集。</li>
+            <li>下载 <strong>YouTube</strong> 或其他由 yt-dlp 解析的海外资源时，可按需要选择清晰度；部分海外站点的访问需要自行确保网络环境可用。</li>
+            <li>下载<strong>微信视频号</strong>时，进入「视频号下载」，先通过腾讯元宝扫码登录或手动填入 Cookie，再粘贴一条或多条视频号分享链接解析下载。</li>
+            <li>需要长期关注抖音账号时，在「<strong>运营管理 → 账号管理</strong>」中添加账号，并按赛道建立分组。</li>
+            <li>进入「<strong>分组爆款分析</strong>」，按自己的选题、时间和数据标准筛选作品，导出表格或复制链接。</li>
+          </ol>
+        </section>
+
+        <p class="notice"><strong>使用说明与提醒：</strong>第三方平台的解析与下载可用性会受平台规则、作品权限、登录状态、网络环境、代理配置及上游解析器更新影响，部分功能可能暂时不可用。视频号下载需使用腾讯元宝 Cookie；YouTube / yt-dlp 兼容站点仅按单条作品下载，海外站点可能需要可用网络代理。请遵守各平台规则、版权法规及内容授权要求，仅下载本人拥有、已获授权或允许保存的公开内容，请勿用于侵权、搬运或其他不当用途。</p>
+        <p class="post-footer">如有使用建议或问题，欢迎在评论区交流反馈。</p>
+      </article>
+    </section>
+
+    <details class="source-box">
+      <summary>论坛支持 Markdown？展开并复制 Markdown 文案</summary>
+      <p>适合支持 Markdown 的论坛、博客或社区编辑器。点击上方「复制 Markdown 文案」可直接复制。</p>
+      <textarea id="markdown-source" readonly aria-label="论坛 Markdown 源码"></textarea>
+    </details>
+
+    <details class="source-box">
+      <summary>论坛支持 HTML 代码？展开并复制精简版 HTML 正文</summary>
+      <p>这里是为论坛 HTML 编辑器准备的精简正文，保留加粗、标题、列表、下载按钮等样式；部分论坛会自动过滤 style 属性，属于平台限制。</p>
+      <textarea id="html-source" readonly aria-label="论坛 HTML 源码"></textarea>
+    </details>
+  </main>
+
+  <script>
+    const post = document.getElementById('forum-post');
+    const source = document.getElementById('html-source');
+    const markdownSource = document.getElementById('markdown-source');
+    const tip = document.getElementById('tip');
+
+    const markdownContent = `# 抖音-TikTok 多平台下载器 v1.0.2
+
+> Windows 桌面工具｜多平台下载 · 视频号下载 · 账号运营分析
+
+一个面向素材整理与账号运营的 Windows 桌面工具。支持 **国内外多平台视频 / 图集解析下载、视频号去水印下载、账号分组管理、作品数据监控与爆款分析**；下载与数据整理可在一个软件内完成。
+
+---
+
+## 多平台下载
+
+粘贴 **视频链接或分享口令** 即可自动识别、解析并加入下载队列。支持视频、图集、部分平台的 LivePhoto 与背景音乐下载；高清 DASH / HLS / 音视频分离资源会自动处理并合成为单个 MP4。
+
+- **国内主流平台**：抖音、快手、小红书、哔哩哔哩、微博、皮皮虾、西瓜视频、微视、最右、火山、度小视、梨视频等。
+- **更多视频平台**：虎牙、A站（AcFun）、美拍、全民K歌、六间房、好看视频等。
+- **YouTube 与海外平台**：支持 YouTube 清晰度选择与自动合并音视频；内置 yt-dlp 通用解析，适用于 TikTok 国际版、Instagram、X（Twitter）、Facebook、Reddit 等众多兼容站点。
+- **抖音无水印下载**：抖音普通视频优先使用无水印地址；图文作品可连同图片、LivePhoto 与背景音乐下载。
+- **视频号下载**：独立视频号下载页面，支持腾讯元宝扫码登录或手动 Cookie、分享链接批量解析、批量下载与流式解密去水印。
+- **下载任务管理**：下载任务集中管理；YouTube / yt-dlp 资源可按需要选择清晰度。
+
+## 抖音 / TikTok 运营工具
+
+- **主页作品与账号管理**：支持抖音 / TikTok 相关的主页作品下载、账号添加与分类管理。
+- **直播下载**：提供直播下载入口，实际可用性以直播状态与平台规则为准。
+- **评论下载与导出**：支持下载评论数据并导出 CSV，便于后续整理与分析。
+- **抖音热榜导出**：支持查看热榜内容并导出 CSV，辅助选题收集。
+- **账号作品监控**：支持关注账号与作品数据监控，可结合应用通知、系统通知或 Server酱配置接收提醒。
+
+## 分组爆款分析
+
+在 **运营管理 → 账号管理** 中选择账号分组，点击左侧 **🔥 分组爆款分析** 即可查看组内作品表现。
+
+支持设置 **发布时间范围、发布至今 7 / 15 / 30 天或自定义天数、点赞区间、播放区间、点赞增长阈值** 等条件；还能按 **爆款指数、点赞密度、点赞数、播放量、发布时间** 等维度排序。筛选结果可导出 CSV（Excel 可直接打开），也可一键复制视频链接。
+
+## 软件下载
+
+**抖音-TikTok 多平台下载器（Windows）**
+
+[点击下载软件](https://wwbve.lanzoub.com/b00g3spmta)
+
+下载地址：<https://wwbve.lanzoub.com/b00g3spmta>
+
+## 简单使用说明
+
+1. 打开「**多平台下载**」，粘贴国内外平台的视频链接或分享口令，解析后选择下载视频或图集。
+2. 下载 **YouTube** 或其他由 yt-dlp 解析的海外资源时，可按需要选择清晰度；部分海外站点需要自行确保网络环境可用。
+3. 下载 **微信视频号** 时，进入「视频号下载」，先通过腾讯元宝扫码登录或手动填入 Cookie，再粘贴一条或多条视频号分享链接解析下载。
+4. 需要长期关注抖音账号时，在「**运营管理 → 账号管理**」中添加账号，并按赛道建立分组。
+5. 进入「**分组爆款分析**」，按自己的选题、时间和数据标准筛选作品，导出表格或复制链接。
+
+> **使用说明与提醒：** 第三方平台的解析与下载可用性会受平台规则、作品权限、登录状态、网络环境、代理配置及上游解析器更新影响，部分功能可能暂时不可用。视频号下载需使用腾讯元宝 Cookie；YouTube / yt-dlp 兼容站点仅按单条作品下载，海外站点可能需要可用网络代理。请遵守各平台规则、版权法规及内容授权要求，仅下载本人拥有、已获授权或允许保存的公开内容，请勿用于侵权、搬运或其他不当用途。
+
+如有使用建议或问题，欢迎在评论区交流反馈。`;
+
+    function setTip(message, isError = false) {
+      tip.textContent = message;
+      tip.style.color = isError ? '#c63838' : '#16885b';
+      window.clearTimeout(setTip.timer);
+      setTip.timer = window.setTimeout(() => { tip.textContent = ''; }, 2800);
+    }
+
+    function compactHtml() {
+      return post.innerHTML.trim();
+    }
+
+    source.value = compactHtml();
+    markdownSource.value = markdownContent;
+
+    async function copyMarkdownSource() {
+      try {
+        await navigator.clipboard.writeText(markdownContent);
+        setTip('已复制 Markdown 文案，可直接粘贴到支持 Markdown 的论坛。');
+      } catch (error) {
+        markdownSource.focus();
+        markdownSource.select();
+        setTip('Markdown 文案已选中，请按 Ctrl + C 复制。', true);
+      }
+    }
+
+    async function copyRichPost() {
+      const plainText = post.innerText.trim();
+      const html = compactHtml();
+      try {
+        if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+          const item = new ClipboardItem({
+            'text/html': new Blob([html], { type: 'text/html' }),
+            'text/plain': new Blob([plainText], { type: 'text/plain' })
+          });
+          await navigator.clipboard.write([item]);
+          setTip('已复制富文本正文，直接粘贴到论坛编辑器即可。');
+          return;
+        }
+        await navigator.clipboard.writeText(plainText);
+        setTip('浏览器不支持富文本剪贴板，已复制纯文本。', true);
+      } catch (error) {
+        selectPost();
+        setTip('自动复制受浏览器限制，正文已选中，请按 Ctrl + C 复制。', true);
+      }
+    }
+
+    async function copyHtmlSource() {
+      try {
+        await navigator.clipboard.writeText(source.value);
+        setTip('已复制 HTML 源码，可粘贴至论坛的 HTML / 代码编辑器。');
+      } catch (error) {
+        source.focus();
+        source.select();
+        setTip('源码已选中，请按 Ctrl + C 复制。', true);
+      }
+    }
+
+    function selectPost() {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(post);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      setTip('正文已选中，请按 Ctrl + C 复制。');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+/* 推广信息页 - 跟随全局浅色主题 */
+.ad-display-page {
+  padding: 20px;
+}
+
+.ads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.ad-card {
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.ad-card.clickable {
+  cursor: pointer;
+}
+
+.ad-card.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(51, 112, 255, 0.3);
+  border-color: var(--accent);
+}
+
+/* 图片广告 */
+.ad-image-container {
+  text-align: center;
+}
+
+.ad-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.ad-image-title {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  margin-top: 10px;
+}
+
+/* 文本广告 */
+.ad-text-content {
+}
+
+.ad-text-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.ad-text-body {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* HTML广告 */
+.ad-html-content {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.ad-html-content a {
+  color: var(--accent);
+}
+
+.ad-html-content img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* 推广页 iframe（加载后台配置的网址） */
+.promo-iframe {
+  width: 100%;
+  height: calc(100vh - 180px);
+  min-height: 500px;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  display: block;
+}
+
+/* 链接提示 */
+.ad-link-hint {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-default);
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* 空状态 */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.empty-state p {
+  color: var(--text-tertiary);
+  font-size: 14px;
+}
+
+/* 操作栏 */
+.actions-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-default);
+}

@@ -1,0 +1,148 @@
+.title-bar {
+  height: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 8px 0 18px;
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-default);
+  color: var(--text-primary);
+  user-select: none;
+  -webkit-app-region: drag;
+  flex-shrink: 0;
+  z-index: 20;
+}
+
+.title-bar-brand {
+  min-width: 154px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.title-bar-platforms {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1.7vw, 22px);
+  overflow: hidden;
+}
+
+.title-bar-platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.title-bar-platform-name {
+  color: var(--text-secondary);
+}
+
+.login-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.login-status-mark {
+  width: 15px;
+  height: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  line-height: 1;
+  font-size: 10px;
+  color: #fff;
+}
+
+.login-status-logged-in { color: var(--success); }
+.login-status-logged-in .login-status-mark { background: var(--success); }
+.login-status-logged-out { color: var(--danger); }
+.login-status-logged-out .login-status-mark { background: var(--danger); }
+.login-status-error { color: var(--warning); }
+.login-status-error .login-status-mark { background: var(--warning); }
+.login-status-checking { color: var(--text-tertiary); }
+.login-status-checking .login-status-mark { background: var(--text-tertiary); }
+
+.login-status-refresh {
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 0 10px;
+  background: var(--bg-inset);
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.login-status-refresh:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--text-primary);
+}
+
+.login-status-refresh:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.window-controls {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  -webkit-app-region: no-drag;
+}
+
+.window-control {
+  width: 42px;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 17px;
+  font-family: "Segoe UI Symbol", system-ui, sans-serif;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.window-control:hover {
+  background: var(--bg-inset);
+  color: var(--text-primary);
+}
+
+.window-control.close:hover {
+  background: #e81123;
+  color: #fff;
+}
+
+@media (max-width: 1160px) {
+  .title-bar { gap: 10px; padding-left: 12px; }
+  .title-bar-brand { min-width: 132px; font-size: 13px; }
+  .title-bar-platforms { gap: 7px; }
+  .title-bar-platform { gap: 3px; font-size: 11px; }
+  .login-status-name { display: none; }
+  .login-status-refresh { padding: 0 7px; font-size: 11px; }
+  .window-control { width: 38px; }
+}

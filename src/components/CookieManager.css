@@ -1,0 +1,418 @@
+﻿.cookie-manager {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 娴忚鍣ㄩ攣鏂囦欢澶辫触鏃讹紝"鍏抽棴娴忚鍣ㄥ苟閲嶈瘯" 鎸夐挳 */
+.retry-locked-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--border-default, #ccc);
+  border-radius: 8px;
+  background: var(--bg-subtle, #f5f5f5);
+  color: var(--text-primary, #333);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+.retry-locked-btn:hover:not(:disabled) {
+  background: var(--accent, #4a90d9);
+  color: #fff;
+  border-color: var(--accent, #4a90d9);
+}
+.retry-locked-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.platform-selector {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.platform-btn {
+  padding: 20px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.platform-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--text-primary);
+}
+
+.platform-btn.active {
+  border-color: var(--accent);
+  background: var(--accent-muted);
+  color: var(--accent);
+}
+
+.platform-icon {
+  font-size: 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.cookie-info {
+  margin-top: 20px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.info-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.info-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.cookie-string-section {
+  margin-top: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-header h4 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.cookie-textarea {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.cookie-table-section {
+  margin-top: 30px;
+}
+
+.cookie-table-section h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.cookie-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-default);
+}
+
+.cookie-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.cookie-table thead {
+  background: var(--bg-inset);
+}
+
+.cookie-table th {
+  padding: 12px;
+  text-align: left;
+  color: var(--text-secondary);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-default);
+}
+
+.cookie-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-muted);
+  color: var(--text-primary);
+}
+
+.cookie-table tbody tr:hover {
+  background: var(--accent-soft);
+}
+
+.cookie-name {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cookie-value {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+}
+
+.instructions-list {
+  margin: 15px 0;
+  padding-left: 25px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.instructions-list li {
+  margin-bottom: 10px;
+}
+
+.instructions-list strong {
+  color: var(--accent);
+}
+
+/* 骞冲彴鍒囨崲 Tab锛堟姈闊?/ TikTok锛?*/
+.platform-tabs {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  padding: 4px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+}
+
+.platform-tab {
+  padding: 8px 22px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.platform-tab:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+}
+
+.platform-tab.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 诊断工具样式 */
+.btn-warning.diagnostic-btn {
+  background: #f59e0b;
+  color: #fff;
+  border-color: #d97706;
+}
+.btn-warning.diagnostic-btn:hover {
+  background: #d97706;
+}
+
+.diagnostic-card {
+  border: 1px solid #3b82f6 !important;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
+  margin-top: 20px;
+}
+
+.diagnostic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.diagnostic-title-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.diagnostic-title-area h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.diagnostic-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.status-healthy { background: #dcfce7; color: #15803d; }
+.status-no-cookie { background: #fee2e2; color: #b91c1c; }
+.status-missing-sessionid { background: #fef3c7; color: #b45309; }
+.status-cookie-expired { background: #fee2e2; color: #b91c1c; }
+.status-risk-control { background: #ffedd5; color: #c2410c; }
+.status-logged-in-local { background: #e0e7ff; color: #4338ca; }
+.status-abnormal { background: #f3f4f6; color: #4b5563; }
+
+.diagnostic-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.diagnostic-summary-box {
+  background: var(--bg-subtle, #f8fafc);
+  border: 1px solid var(--border-default, #e2e8f0);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.summary-title {
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.summary-text {
+  margin: 0 0 8px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.suggested-actions {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-muted, #cbd5e1);
+  font-size: 13px;
+}
+.suggested-actions .actions-title {
+  font-weight: 600;
+  color: var(--accent, #3b82f6);
+}
+.suggested-actions ol {
+  margin: 4px 0 0 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+}
+.suggested-actions li {
+  margin-bottom: 4px;
+}
+
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.diag-section {
+  background: var(--bg-surface, #fff);
+  border: 1px solid var(--border-default, #e2e8f0);
+  border-radius: 8px;
+  padding: 12px;
+}
+.diag-section h4 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.diag-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-muted, #f1f5f9);
+}
+.diag-label { color: var(--text-secondary); }
+.diag-value { font-weight: 600; }
+.text-ok { color: #16a34a; }
+.text-fail { color: #dc2626; }
+
+.diag-key-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.key-tag {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.tag-ok { background: #dcfce7; color: #166534; }
+.tag-missing { background: #fee2e2; color: #991b1b; }
+
+.probe-item {
+  padding: 8px;
+  border-radius: 6px;
+  background: var(--bg-subtle, #f8fafc);
+  margin-bottom: 8px;
+  border: 1px solid var(--border-muted, #e2e8f0);
+}
+.probe-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+.probe-result-badge {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+.probe-logged-in { background: #dcfce7; color: #166534; }
+.probe-logged-out { background: #fee2e2; color: #991b1b; }
+.probe-risk-blocked { background: #ffedd5; color: #9a3412; }
+
+.probe-detail-line {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+.probe-user-pill {
+  font-size: 12px;
+  color: #15803d;
+  background: #f0fdf4;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.raw-report-box {
+  margin-top: 12px;
+}
+.raw-report-textarea {
+  width: 100%;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  background: var(--bg-inset, #0f172a);
+  color: #38bdf8;
+  padding: 10px;
+  border-radius: 6px;
+}

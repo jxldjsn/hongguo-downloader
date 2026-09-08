@@ -1,0 +1,242 @@
+.hot-board {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 榜单类型选择 */
+.board-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.board-type-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.board-type-card:hover:not(:disabled) {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.board-type-card:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.board-type-active {
+  border-color: var(--accent) !important;
+  background: var(--accent-soft) !important;
+}
+
+.board-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.board-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.board-type-active .board-label {
+  color: var(--accent);
+}
+
+/* 加载指示器 */
+.loading-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  color: var(--text-secondary);
+}
+
+/* 热榜列表头部 */
+.hotlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hotlist-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* 热榜表格 */
+.hotlist-table-wrapper {
+  overflow-x: auto;
+}
+
+.hotlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hotlist-table thead {
+  background: linear-gradient(135deg, var(--accent) 0%, #764ba2 100%);
+  color: white;
+}
+
+.hotlist-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hotlist-table tbody tr {
+  border-bottom: 1px solid var(--border-default);
+  transition: background 0.15s ease;
+}
+
+.hotlist-table tbody tr:hover {
+  background: var(--bg-primary);
+}
+
+.hotlist-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.hotlist-table td {
+  padding: 16px;
+  color: var(--text-primary);
+}
+
+/* 排名单元格 */
+.rank-cell {
+  width: 80px;
+  text-align: center;
+}
+
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.rank-1 {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #000;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.rank-2 {
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+  color: #000;
+  box-shadow: 0 4px 12px rgba(192, 192, 192, 0.4);
+}
+
+.rank-3 {
+  background: linear-gradient(135deg, #cd7f32 0%, #daa520 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(205, 127, 50, 0.4);
+}
+
+.rank-other {
+  background: var(--bg-inset);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
+}
+
+/* 关键词单元格 */
+.keyword-cell {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* 热度单元格 */
+.hotvalue-cell {
+  color: var(--danger);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* 标签单元格 */
+.label-cell {
+  width: 150px;
+}
+
+.label-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--accent-muted);
+  color: var(--accent);
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 使用说明 */
+.instructions {
+  color: var(--text-primary);
+}
+
+.instructions ol {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+.instructions ol li {
+  margin: 8px 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .board-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hotlist-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hotlist-table th,
+  .hotlist-table td {
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+
+  .rank-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .keyword-cell {
+    font-size: 14px;
+  }
+}

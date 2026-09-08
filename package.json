@@ -1,0 +1,100 @@
+{
+  "name": "douyin-downloader",
+  "version": "1.0.2",
+  "description": "抖音/TikTok下载器 - 官网与成品下载: 111330.com",
+  "homepage": "https://111330.com",
+  "main": "main.js",
+  "author": "Your Name",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dev": "concurrently \"npm run dev:react\" \"wait-on http://localhost:3000 && electron .\"",
+    "dev:react": "vite",
+    "build:react": "vite build",
+    "build": "npm run build:win",
+    "prepack:win64": "node build/verify-win64-tools.js",
+    "build:win": "npm run check && npm run prepack:win64 && node --experimental-require-module ./node_modules/electron-builder/cli.js --win --x64",
+    "pack": "electron-builder --dir",
+    "test": "node --test --test-concurrency=1 tests/all.test.js",
+    "test:offline": "node --test --test-concurrency=1 tests/all.test.js",
+    "check": "node --check main.js && node --check preload.js && node --check preload-login.js && npm test && npm run build:react"
+  },
+  "dependencies": {
+    "axios": "^1.18.0",
+    "bytenode": "^1.5.7",
+    "electron-store": "^8.2.0",
+    "exceljs": "^4.4.0",
+    "ffmpeg-static": "^5.3.0",
+    "sm-crypto": "^0.5.5",
+    "sql.js": "^1.14.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^8.2.2",
+    "electron": "^41.10.4",
+    "electron-builder": "^26.15.3",
+    "png-to-ico": "^3.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^3.8.1",
+    "sharp": "^0.35.3",
+    "vite": "^6.4.3",
+    "wait-on": "^7.2.0"
+  },
+  "overrides": {
+    "uuid": "11.1.1"
+  },
+  "build": {
+    "appId": "com.douyin.downloader",
+    "productName": "抖音-TikTok 多平台",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "preload-login.js",
+      "splash.html",
+      "dist-react/**/*",
+      "src/native/**/*",
+      "src/utils/**/*",
+      "assets/**/*"
+    ],
+    "asar": true,
+    "afterPack": "build/afterPack.js",
+    "asarUnpack": [
+      "node_modules/sql.js/dist/sql-wasm.wasm",
+      "node_modules/ffmpeg-static/**",
+      "assets/yt-dlp.exe"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "抖音-TikTok 多平台",
+      "deleteAppDataOnUninstall": false,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "differentialPackage": false,
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    }
+  }
+}

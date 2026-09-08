@@ -1,0 +1,424 @@
+/* ===== 分享软件页面（绚丽风格） ===== */
+.share-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 28px 0 48px;
+}
+
+/* 背景装饰光斑 */
+.share-bg-decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.share-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  animation: orb-float 14s ease-in-out infinite;
+}
+
+.share-orb-1 {
+  width: 360px; height: 360px;
+  top: -120px; left: -80px;
+  background: radial-gradient(circle, #6366f1, transparent 70%);
+}
+
+.share-orb-2 {
+  width: 420px; height: 420px;
+  top: 40px; right: -140px;
+  background: radial-gradient(circle, #ec4899, transparent 70%);
+  animation-delay: -3s;
+}
+
+.share-orb-3 {
+  width: 320px; height: 320px;
+  bottom: -80px; left: 18%;
+  background: radial-gradient(circle, #06b6d4, transparent 70%);
+  animation-delay: -6s;
+}
+
+.share-orb-4 {
+  width: 300px; height: 300px;
+  bottom: 80px; right: 10%;
+  background: radial-gradient(circle, #f59e0b, transparent 70%);
+  animation-delay: -9s;
+}
+
+@keyframes orb-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.08); }
+  66% { transform: translate(-25px, 30px) scale(0.95); }
+}
+
+.share-content-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 顶部主视觉 */
+.share-hero {
+  text-align: center;
+  padding: 36px 24px 28px;
+}
+
+.share-logo-glow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 28px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.55), 0 8px 32px rgba(236, 72, 153, 0.3);
+  animation: logo-pulse 3.5s ease-in-out infinite;
+}
+
+.share-logo {
+  font-size: 48px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+@keyframes logo-pulse {
+  0%, 100% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.55), 0 8px 32px rgba(236, 72, 153, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.75), 0 8px 40px rgba(236, 72, 153, 0.45);
+    transform: scale(1.04);
+  }
+}
+
+.share-title {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  letter-spacing: 1px;
+  background: linear-gradient(120deg, #6366f1 0%, #a855f7 35%, #ec4899 70%, #f59e0b 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: title-shine 5s linear infinite;
+}
+
+@keyframes title-shine {
+  to { background-position: 200% center; }
+}
+
+.share-slogan {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0 0 24px;
+  letter-spacing: 2px;
+}
+
+/* 平台标签云 */
+.share-platform-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.share-tag {
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 999px;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: all 0.25s;
+}
+
+.share-tag:hover {
+  transform: translateY(-2px);
+  border-color: transparent;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4);
+}
+
+/* 下载地址卡片 */
+.share-download-card {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 流光边框 */
+.share-download-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1.5px;
+  background: linear-gradient(120deg, #6366f1, #ec4899, #f59e0b, #06b6d4, #6366f1);
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-flow 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes border-flow {
+  to { background-position: 300% 0; }
+}
+
+.share-download-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.share-download-header svg {
+  color: #a855f7;
+}
+
+.share-url-box {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.share-url-input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 16px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.share-url-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+.share-btn {
+  flex-shrink: 0;
+  min-width: 116px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  padding: 0 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.share-btn-copy {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+}
+
+.share-btn-copy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(99, 102, 241, 0.55);
+}
+
+.share-btn-copy.copied {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+}
+
+.share-btn-open {
+  background: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.4);
+}
+
+.share-btn-open:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(236, 72, 153, 0.55);
+}
+
+.share-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.share-copy-tip {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #10b981;
+  font-weight: 500;
+  animation: tip-in 0.3s ease;
+}
+
+@keyframes tip-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 功能亮点网格 */
+.share-features {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.share-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.share-feature:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+}
+
+.share-feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(236, 72, 153, 0.12));
+  color: #8b5cf6;
+}
+
+.share-feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.share-feature-text strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.share-feature-text span {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+}
+
+/* 分享引导 CTA */
+.share-cta {
+  margin-top: 24px;
+  padding: 24px 28px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(236, 72, 153, 0.08));
+  border: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.share-cta-text h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--text-primary);
+}
+
+.share-cta-text p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.share-cta-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  background-size: 200% auto;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s, background-position 0.4s;
+}
+
+.share-cta-btn:hover {
+  transform: translateY(-2px);
+  background-position: right center;
+  box-shadow: 0 8px 28px rgba(139, 92, 246, 0.55);
+}
+
+/* 响应式 */
+@media (max-width: 720px) {
+  .share-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .share-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 520px) {
+  .share-url-box {
+    flex-wrap: wrap;
+  }
+  .share-url-input {
+    flex: 1 1 100%;
+  }
+  .share-btn {
+    flex: 1;
+    min-width: 0;
+  }
+  .share-features {
+    grid-template-columns: 1fr;
+  }
+  .share-cta {
+    flex-direction: column;
+    text-align: center;
+  }
+}

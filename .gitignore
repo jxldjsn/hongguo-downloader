@@ -1,0 +1,62 @@
+# 依赖
+node_modules/
+dist/
+dist-react/
+
+# 构建与打包输出
+release/
+out/
+.webpack/
+*.asar
+*.exe
+*.dmg
+*.app
+*.AppImage
+
+# 保留必需的外部工具
+!assets/yt-dlp.exe
+
+# 历史 Python 源码构建目录
+抖音下载器源码/build/
+抖音下载器源码/dist/
+
+# 临时测试与脚本文件
+*-player-script.js
+_tmp_pip/
+.zcode/
+*.tmp
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+venv/
+.Python
+python-backend/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 系统文件
+Thumbs.db
+.DS_Store
+
+# 配置文件（包含敏感信息）
+config.json
+settings.json
+

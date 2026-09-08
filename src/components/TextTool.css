@@ -1,0 +1,249 @@
+/* 文本处理工具 */
+.texttool-card {
+  margin-top: 0;
+}
+
+.texttool-header {
+  margin-bottom: 16px;
+}
+
+.texttool-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 8px 0 0;
+  line-height: 1.6;
+}
+
+.texttool-input-area {
+  margin-bottom: 16px;
+}
+
+.texttool-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.texttool-input-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.texttool-input-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.texttool-textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 12px 14px;
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.texttool-textarea:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.12);
+}
+
+.texttool-textarea::placeholder {
+  color: var(--text-tertiary);
+  font-family: inherit;
+}
+
+/* 选项区 */
+.texttool-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin: 14px 0;
+  padding: 12px 14px;
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+}
+
+.texttool-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.texttool-option input[type='checkbox'] {
+  cursor: pointer;
+  accent-color: var(--accent-primary);
+  width: 15px;
+  height: 15px;
+}
+
+.texttool-option-hint {
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+.texttool-action-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.texttool-extract-btn {
+  min-width: 160px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* 结果区 */
+.texttool-result-area {
+  border-top: 1px solid var(--border-default);
+  padding-top: 16px;
+}
+
+.texttool-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.texttool-result-stats {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.texttool-result-stats strong {
+  color: var(--accent-primary);
+  font-size: 15px;
+}
+
+.texttool-video-count {
+  color: var(--success);
+  margin-left: 4px;
+}
+
+.texttool-result-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* 链接列表 */
+.texttool-link-list {
+  max-height: 360px;
+  overflow-y: auto;
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+}
+
+.texttool-link-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-default);
+  font-size: 13px;
+  transition: background 0.15s;
+}
+
+.texttool-link-item:last-child {
+  border-bottom: none;
+}
+
+.texttool-link-item:hover {
+  background: var(--bg-tertiary);
+}
+
+.texttool-link-index {
+  flex-shrink: 0;
+  width: 28px;
+  text-align: right;
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+.texttool-link-proto {
+  flex-shrink: 0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.texttool-link-proto.proto-https {
+  background: #2ecc71;
+}
+
+.texttool-link-proto.proto-http {
+  background: #f39c12;
+}
+
+.texttool-link-proto.proto-ftp {
+  background: #9b59b6;
+}
+
+.texttool-link-proto.proto-file {
+  background: #7f8c8d;
+}
+
+.texttool-link-platform {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.texttool-link-url {
+  flex: 1;
+  min-width: 0;
+  color: var(--text-primary);
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.texttool-link-copy {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  opacity: 0.5;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.texttool-link-copy:hover {
+  opacity: 1;
+  background: var(--bg-tertiary);
+}
+
+.texttool-empty {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-tertiary);
+  font-size: 13px;
+}
